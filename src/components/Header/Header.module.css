@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 250px;
+}
+
+.header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 6em;
+  width: 100%;
+  height: calc(100px + 10em);
+  z-index: -1;
+  transform: skewY(-3.5deg);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
+      no-repeat center,
+    linear-gradient(#4e4376, #2b5876);
+  background-size: cover;
+  border-bottom: 0.2em solid #fff;
+}
+
+.headerTitle {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 20px 0 0 40px;
+  text-shadow: 0.022em 0.022em 0.022em #111;
+  color: #fff;
+}
