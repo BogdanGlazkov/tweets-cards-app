@@ -1,7 +1,13 @@
 .header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 250px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 20px;
+  color: #fff;
+  border: 2px solid red;
 }
 
 .header::before {
@@ -26,7 +32,5 @@
   font-size: 52px;
   font-weight: 700;
   letter-spacing: 0.01em;
-  padding: 20px 0 0 40px;
   text-shadow: 0.022em 0.022em 0.022em #111;
-  color: #fff;
 }
