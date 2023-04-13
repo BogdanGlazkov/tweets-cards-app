@@ -1,9 +1,8 @@
-import React, { lazy } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/Home/HomePage.jsx";
+import TweetsPage from "./pages/Tweets/TweetsPage.jsx";
 import Layout from "./components/Layout/Layout";
-
-const HomePage = lazy(() => import("./pages/Home/HomePage.jsx"));
-const TweetsPage = lazy(() => import("./pages/Tweets/TweetsPage.jsx"));
 
 export default function App() {
   return (

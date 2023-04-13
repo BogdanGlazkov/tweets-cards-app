@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 15px;
+
+  font-size: 16px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid #4b2a99;
+  transition: all var(--transition);
+}
+
+.link:hover {
+  background-color: rgba(75, 42, 153, 0.3);
+}
+
+.active {
+  background-color: rgba(75, 42, 153, 0.3);
+  text-decoration: underline;
+}
