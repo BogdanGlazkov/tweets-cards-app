@@ -5,7 +5,7 @@ import s from "./Navigation.module.css";
 
 export default function Navigation() {
   const getActiveClassName = ({ isActive }) => {
-    return isActive ? `${s.link} ${s.active}` : s.link;
+    return isActive ? "visually-hidden" : s.link;
   };
 
   return (
@@ -15,7 +15,7 @@ export default function Navigation() {
         <p>Go back</p>
       </NavLink>
       <NavLink className={getActiveClassName} to="/tweets">
-        <FaceIcon sx={{ mr: 1, fontSize: 36, fill: "currentcolor" }} />
+        <FaceIcon sx={{ mr: 2.2, fontSize: 36, fill: "currentcolor" }} />
         <p>Tweets</p>
       </NavLink>
     </div>
