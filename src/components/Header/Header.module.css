@@ -1,13 +1,13 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 10px 20px;
   color: #fff;
 }
 
@@ -18,9 +18,9 @@
   left: 0;
   top: -130px;
   width: 100%;
-  height: calc(80px + 10em);
+  height: calc(70px + 10em);
   z-index: -1;
-  transform: skewY(-3.5deg);
+  transform: skewY(-2deg);
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
     url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
       no-repeat center,
@@ -30,13 +30,17 @@
 }
 
 .headerTitle {
-  font-size: 28px;
+  font-size: 24px;
   letter-spacing: 0.01em;
   text-shadow: 0.022em 0.022em 0.022em #111;
   cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    padding: 20px 40px;
+  }
+
   .headerTitle {
     font-size: 52px;
   }
