@@ -1,41 +1,37 @@
-.header {
+.footer {
+  position: relative;
   width: 100vw;
-  height: 150px;
+  height: 100px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   padding: 40px;
   color: #fff;
 }
 
-.header::before {
+.footer::before {
   content: "";
   display: block;
   position: absolute;
   left: 0;
-  top: -100px;
+  bottom: 0;
   width: 100%;
-  height: calc(100px + 10em);
+  height: 100px;
   z-index: -1;
-  transform: skewY(-3.5deg);
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
     url(https://images.unsplash.com/photo-1495464101292-552d0b52fe41?auto=format&fit=crop&w=1350&q=80)
       no-repeat center,
     linear-gradient(#4e4376, #2b5876);
   background-size: cover;
-  border-bottom: 0.2em solid #fff;
+  border-top: 0.2em solid #fff;
 }
 
-.headerTitle {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-shadow: 0.022em 0.022em 0.022em #111;
+.footerTitle {
+  font-size: 32px;
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
-  .headerTitle {
-    font-size: 52px;
-  }
+.footerText {
+  font-size: 16px;
+  cursor: pointer;
 }
