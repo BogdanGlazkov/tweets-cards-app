@@ -1,5 +1,33 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 48px;
+}
+
+.loadMoreBtn {
+  display: inline-flex;
+  width: 150px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 4px 12px;
+
+  font-size: 16px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  outline: 1px solid #471ca9;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+  background-color: rgba(75, 42, 153, 0.3);
+  text-decoration: underline;
 }

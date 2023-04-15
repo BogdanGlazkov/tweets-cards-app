@@ -13,7 +13,7 @@ export default function Hero() {
       <div className={s.heroImgWrapper}>
         <img
           className={s.heroImg}
-          srcset={`${heroPicLarge} 270w,
+          srcSet={`${heroPicLarge} 270w,
           			${heroPicMiddle} 354w,
           			${heroPicSmall} 460w,
           			`}
