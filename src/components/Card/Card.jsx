@@ -1,20 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Topcard from "../../assets/images/carddecor.png";
 import s from "./Card.module.css";
 
-const user = {
-  user: "Rachael Welch",
-  avatar:
-    "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/180.jpg",
-  tweets: 777,
-  followers: 100500,
-  id: "1",
-};
-
-export default function Card() {
+export default function Card({ user }) {
   const { user: userName, avatar, tweets, followers, id } = user;
   const [followersCount, setFollowersCount] = useState(followers);
-  const [isActive, setIsActive] = useState(localStorage.getItem(id) || false);
+  const [isActive, setIsActive] = useState(false);
 
   const onClick = () => {
     localStorage.setItem(id, !isActive);
@@ -25,6 +16,14 @@ export default function Card() {
       setFollowersCount(followersCount + 1);
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem(id) === "true") {
+      setIsActive(true);
+      setFollowersCount(followersCount + 1);
+    }
+    /* eslint-disable-next-line */
+  }, []);
 
   return (
     <div className={s.card}>
