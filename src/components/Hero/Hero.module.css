@@ -1,5 +1,5 @@
 .hero {
-  padding: 20px;
+  padding: 0;
 }
 
 .heroTitle {
@@ -21,7 +21,7 @@
 
 .heroImgWrapper {
   width: 90%;
-  margin: 40px auto 80px;
+  margin: 40px auto 0;
 }
 
 .heroImg {
