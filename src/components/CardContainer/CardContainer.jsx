@@ -7,9 +7,9 @@ import s from "./CardContainer.module.css";
 const pageSize = 12;
 const dropdownText = {
   title: "Choose option",
-  selected: "Show following",
-  notSelected: "Show not following",
   all: "Show all",
+  follow: "Follow",
+  followings: "Followings",
 };
 
 export default function CardContainer() {
@@ -41,7 +41,7 @@ export default function CardContainer() {
       const filteredUsers = users.filter((user) =>
         filteredId.includes(user.id)
       );
-      setFilterText(dropdownText.selected);
+      setFilterText(dropdownText.followings);
       setFilteredUsers(filteredUsers);
     } else if (option === "false") {
       const filteredId = [];
@@ -54,7 +54,7 @@ export default function CardContainer() {
       const filteredUsers = users.filter(
         (user) => !filteredId.includes(user.id)
       );
-      setFilterText(dropdownText.notSelected);
+      setFilterText(dropdownText.follow);
       setFilteredUsers(filteredUsers);
     } else {
       setFilterText(dropdownText.all);
@@ -75,14 +75,14 @@ export default function CardContainer() {
         open={openDropdown}
         trigger={<button onClick={onDropdown}>{filterText}</button>}
         menu={[
-          <button onClick={() => onDropdownMenu("true")}>
-            {dropdownText.selected}
-          </button>,
-          <button onClick={() => onDropdownMenu("false")}>
-            {dropdownText.notSelected}
-          </button>,
           <button onClick={() => onDropdownMenu("all")}>
             {dropdownText.all}
+          </button>,
+          <button onClick={() => onDropdownMenu("false")}>
+            {dropdownText.follow}
+          </button>,
+          <button onClick={() => onDropdownMenu("true")}>
+            {dropdownText.followings}
           </button>,
         ]}
       />
