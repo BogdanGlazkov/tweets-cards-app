@@ -6,7 +6,7 @@ import Layout from "./components/Layout/Layout";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/tweets-cards-app">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
