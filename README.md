@@ -14,8 +14,10 @@
 </ul><ul>
 <li>JavaScript</li>
 </ul><ul>
-<li>React</li>
-</ul><h2>Setup</h2>
+<li>React</li></ul>
+<h2>Screenshots</h2>
+<img src="./src/assets/images/app-screenshot.jpg" alt="Screenshot" width="800" />
+<h2>Setup</h2>
 <hr><p>To set up the project you can clone it from this repo: https://github.com/BogdanGlazkov/tweets-cards-app</p><h5>Steps</h5><ul>
 <li>npm ci</li>
 </ul><ul>
@@ -24,7 +26,18 @@
 <li>npm run build</li>
 </ul><h5>Code Examples</h5><ul>
 <li>This project uses React function components, some UI libraries, and React hooks. Here is a code example of Loader component</li>
-</ul><p><code>import { ThreeDots } from "react-loader-spinner"; import s from "./Loader.module.css";  export default function Loader() {   return (     &lt;div className={s.wrapper}&gt;       &lt;ThreeDots color="purple" /&gt;     &lt;/div&gt;   ); }</code></p><h2>Project Status</h2>
+</ul>
+<p><code>import { ThreeDots } from "react-loader-spinner"; 
+import s from "./Loader.module.css";  
+export default function Loader() {   
+    return (     
+        &lt;div className={s.wrapper}&gt;       
+        &lt;ThreeDots color="purple" /&gt;     
+        &lt;/div&gt;   
+        ); 
+        }</code></p>
+        
+<h2>Project Status</h2>
 <hr><p>Completed</p><h2>Features that can be added</h2>
 <hr><ul>
 <li>Cloud database</li>
