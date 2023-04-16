@@ -1,70 +1,37 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1>Tweets Cards App</h1>
+<hr><p>You can find and follow tweets cards here</p><h2>General Information</h2>
+<hr><ul>
+<li>React application for displaying tweets cards. There's 2 pages: Home page and Tweets page. You can navigate beetween pages using links on the top rigth corner</li>
+</ul><ul>
+<li>Each user has a card with general information (name, avatar, tweets number, followers number). There's 12 cards on Tweets page. You can load more by pressing the button on the bottom of the page</li>
+</ul><ul>
+<li>Also you can follow any user, unfollow, or filter all users to see followed/not followed users</li>
+</ul><h2>Technologies Used</h2>
+<hr><ul>
+<li>HTML</li>
+</ul><ul>
+<li>CSS</li>
+</ul><ul>
+<li>JavaScript</li>
+</ul><ul>
+<li>React</li>
+</ul><h2>Setup</h2>
+<hr><p>To set up the project you can clone it from this repo: https://github.com/BogdanGlazkov/tweets-cards-app</p><h5>Steps</h5><ul>
+<li>npm ci</li>
+</ul><ul>
+<li>npm start</li>
+</ul><ul>
+<li>npm run build</li>
+</ul><h5>Code Examples</h5><ul>
+<li>This project uses React function components, some UI libraries, and React hooks. Here is a code example of Loader component</li>
+</ul><p><code>import { ThreeDots } from "react-loader-spinner"; import s from "./Loader.module.css";  export default function Loader() {   return (     &lt;div className={s.wrapper}&gt;       &lt;ThreeDots color="purple" /&gt;     &lt;/div&gt;   ); }</code></p><h2>Project Status</h2>
+<hr><p>Completed</p><h2>Features that can be added</h2>
+<hr><ul>
+<li>Cloud database</li>
+</ul><ul>
+<li>Authorization</li>
+</ul><h2>Acknowledgement</h2>
+<hr><ul>
+<li>This project was based on GoIT school tutorials</li>
+</ul><h2>Contact</h2>
+<hr><p><span style="margin-right: 30px;"></span><a href="https://www.linkedin.com/in/bogdan-glazkov/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="width: 10%;"></a><span style="margin-right: 30px;"></span><a href="https://github.com/BogdanGlazkov"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="width: 10%;"></a></p>
