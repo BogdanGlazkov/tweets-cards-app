@@ -5,12 +5,19 @@ import Dropdown from "../Dropdown/Dropdown";
 import s from "./CardContainer.module.css";
 
 const pageSize = 12;
+const dropdownText = {
+  title: "Choose option",
+  selected: "Show following",
+  notSelected: "Show not following",
+  all: "Show all",
+};
 
 export default function CardContainer() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredUsers, setFilteredUsers] = useState(users);
   const [currentUsers, setCurrentUsers] = useState([]);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const [filterText, setFilterText] = useState(dropdownText.title);
   const lastPage = Math.ceil(users.length / pageSize);
 
   const onLoadMore = (event) => {
@@ -34,20 +41,23 @@ export default function CardContainer() {
       const filteredUsers = users.filter((user) =>
         filteredId.includes(user.id)
       );
+      setFilterText(dropdownText.selected);
       setFilteredUsers(filteredUsers);
     } else if (option === "false") {
       const filteredId = [];
       for (let i = 0; i < localStorage.length; i++) {
         const userId = localStorage.key(i);
-        if (localStorage.getItem(userId) === "false") {
+        if (localStorage.getItem(userId) === "true") {
           filteredId.push(userId);
         }
       }
-      const filteredUsers = users.filter((user) =>
-        filteredId.includes(user.id)
+      const filteredUsers = users.filter(
+        (user) => !filteredId.includes(user.id)
       );
+      setFilterText(dropdownText.notSelected);
       setFilteredUsers(filteredUsers);
     } else {
+      setFilterText(dropdownText.all);
       setFilteredUsers(users);
     }
     setOpenDropdown(false);
@@ -63,15 +73,17 @@ export default function CardContainer() {
     <>
       <Dropdown
         open={openDropdown}
-        trigger={<button onClick={onDropdown}>Choose option &#129031;</button>}
+        trigger={<button onClick={onDropdown}>{filterText}</button>}
         menu={[
           <button onClick={() => onDropdownMenu("true")}>
-            Show following
+            {dropdownText.selected}
           </button>,
           <button onClick={() => onDropdownMenu("false")}>
-            Show not following
+            {dropdownText.notSelected}
           </button>,
-          <button onClick={() => onDropdownMenu("all")}>Show all</button>,
+          <button onClick={() => onDropdownMenu("all")}>
+            {dropdownText.all}
+          </button>,
         ]}
       />
       <div className={s.wrapper}>
@@ -79,13 +91,8 @@ export default function CardContainer() {
           return <Card key={user.id} user={user} />;
         })}
       </div>
-      {currentPage >= lastPage ? null : (
-        <button
-          className={s.loadMoreBtn}
-          type="button"
-          onClick={onLoadMore}
-          // disabled={currentPage >= lastPage}
-        >
+      {currentPage >= lastPage || currentUsers.length < pageSize ? null : (
+        <button className={s.loadMoreBtn} type="button" onClick={onLoadMore}>
           Load More
         </button>
       )}
