@@ -48,8 +48,8 @@ export default function Card({ user }) {
           {followersCount.toLocaleString("en-US")} followers
         </p>
         <button
-          className={s.cardBtn}
-          style={isActive ? { backgroundColor: "#5CD3A8" } : null}
+          className={isActive ? s.cardBtnActive : s.cardBtn}
+          // style={isActive ? { backgroundColor: "#5CD3A8" } : null}
           type="button"
           onClick={onClick}
         >
