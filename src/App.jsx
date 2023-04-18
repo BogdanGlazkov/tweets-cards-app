@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
 import HomePage from "./pages/Home/HomePage.jsx";
 import TweetsPage from "./pages/Tweets/TweetsPage.jsx";
 import Layout from "./components/Layout/Layout";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/tweets-cards-app">
+    <HashRouter hashType="slash">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -14,6 +14,6 @@ export default function App() {
         </Route>
         <Route path="*" element={<Navigate to={"/"} />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
