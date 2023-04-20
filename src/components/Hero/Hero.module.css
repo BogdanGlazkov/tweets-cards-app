@@ -2,6 +2,25 @@
   padding: 0;
 }
 
+.lng {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: end;
+}
+
+.lng > button {
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.lng > button:hover {
+  transform: scale(1.1);
+}
+
 .heroTitle {
   font-size: 48px;
   letter-spacing: 0.01em;
