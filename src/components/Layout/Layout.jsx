@@ -10,8 +10,9 @@ export default function Layout() {
     <>
       <Header />
       <Section>
-        <Suspense fallback={<Loader />} />
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </Section>
       <Footer />
     </>
