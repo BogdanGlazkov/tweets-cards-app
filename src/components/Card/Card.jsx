@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Trans } from "react-i18next";
 import Topcard from "../../assets/images/carddecor.png";
 import s from "./Card.module.css";
 
@@ -43,18 +44,24 @@ export default function Card({ user }) {
             width="62"
           />
         </div>
-        <p className={s.cardText}>{tweets} tweets</p>
         <p className={s.cardText}>
-          {followersCount.toLocaleString("en-US")} followers
+          {tweets} <Trans i18nKey="tweets">tweets</Trans>
+        </p>
+        <p className={s.cardText}>
+          {followersCount.toLocaleString("en-US")}{" "}
+          <Trans i18nKey="followers">followers</Trans>
         </p>
         <button
           className={isActive ? s.cardBtnActive : s.cardBtn}
-          // style={isActive ? { backgroundColor: "#5CD3A8" } : null}
           type="button"
           onClick={onClick}
         >
           <span className={s.cardBtnText}>
-            {isActive ? "Following" : "Follow"}
+            {isActive ? (
+              <Trans i18nKey="following">Following</Trans>
+            ) : (
+              <Trans i18nKey="optionFollow">Follow</Trans>
+            )}
           </span>
         </button>
       </div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Trans } from "react-i18next";
 import users from "../../assets/db/users.json";
 import Card from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
@@ -6,10 +7,10 @@ import s from "./CardContainer.module.css";
 
 const pageSize = 12;
 const dropdownText = {
-  title: "Choose option",
-  all: "Show all",
-  follow: "Follow",
-  followings: "Followings",
+  optionTitle: <Trans i18nKey="optionTitle">Choose option</Trans>,
+  optionAll: <Trans i18nKey="optionAll">Show all</Trans>,
+  optionFollow: <Trans i18nKey="optionFollow">Follow</Trans>,
+  optionFollowings: <Trans i18nKey="optionFollowings">Followings</Trans>,
 };
 
 export default function CardContainer() {
@@ -17,7 +18,7 @@ export default function CardContainer() {
   const [filteredUsers, setFilteredUsers] = useState(users);
   const [currentUsers, setCurrentUsers] = useState([]);
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [filterText, setFilterText] = useState(dropdownText.title);
+  const [filterText, setFilterText] = useState(dropdownText.optionTitle);
   const lastPage = Math.ceil(users.length / pageSize);
 
   const onLoadMore = (event) => {
@@ -41,7 +42,7 @@ export default function CardContainer() {
       const filteredUsers = users.filter((user) =>
         filteredId.includes(user.id)
       );
-      setFilterText(dropdownText.followings);
+      setFilterText(dropdownText.optionFollowings);
       setFilteredUsers(filteredUsers);
     } else if (option === "false") {
       const filteredId = [];
@@ -54,10 +55,10 @@ export default function CardContainer() {
       const filteredUsers = users.filter(
         (user) => !filteredId.includes(user.id)
       );
-      setFilterText(dropdownText.follow);
+      setFilterText(dropdownText.optionFollow);
       setFilteredUsers(filteredUsers);
     } else {
-      setFilterText(dropdownText.all);
+      setFilterText(dropdownText.optionAll);
       setFilteredUsers(users);
     }
     setOpenDropdown(false);
@@ -76,13 +77,13 @@ export default function CardContainer() {
         trigger={<button onClick={onDropdown}>{filterText}</button>}
         menu={[
           <button onClick={() => onDropdownMenu("all")}>
-            {dropdownText.all}
+            {dropdownText.optionAll}
           </button>,
           <button onClick={() => onDropdownMenu("false")}>
-            {dropdownText.follow}
+            {dropdownText.optionFollow}
           </button>,
           <button onClick={() => onDropdownMenu("true")}>
-            {dropdownText.followings}
+            {dropdownText.optionFollowings}
           </button>,
         ]}
       />
@@ -93,7 +94,7 @@ export default function CardContainer() {
       </div>
       {currentPage >= lastPage || currentUsers.length < pageSize ? null : (
         <button className={s.loadMoreBtn} type="button" onClick={onLoadMore}>
-          Load More
+          <Trans i18nKey="loadMore">Load More</Trans>
         </button>
       )}
     </>
